@@ -267,7 +267,7 @@ function RegistrationFlow({
         <ArrowLeft aria-hidden="true" className="h-4 w-4" /> Back to event details
       </button>
       <p className="event-app__eyebrow">// Demo registration · {event.title}</p>
-      <h1 className="event-app__view-title" id="registration-title" ref={headingRef} tabIndex={-1}>
+      <h1 className="event-app__view-title" id="registration-title">
         Reserve a demo pass.
       </h1>
       <p className="event-app__view-intro">
@@ -278,7 +278,7 @@ function RegistrationFlow({
       <form className="event-app__step-panel" noValidate onSubmit={handleSubmit}>
         {step === 0 ? (
           <>
-            <h2>Choose a pass</h2>
+            <h2 ref={headingRef} tabIndex={-1}>Choose a pass</h2>
             <p>All options are sample data. There is no checkout or payment processing.</p>
             <fieldset className="event-app__ticket-options" aria-required="true" aria-describedby={errors.ticket ? "ticket-error" : undefined}>
               <legend className="event-app__field-label">Pass type</legend>
@@ -306,7 +306,7 @@ function RegistrationFlow({
 
         {step === 1 ? (
           <>
-            <h2>Attendee details</h2>
+            <h2 ref={headingRef} tabIndex={-1}>Attendee details</h2>
             <p>These fields are used only to complete the on-screen preview. Attendee details are not sent or saved.</p>
             <div className="event-app__form-grid">
               <div className="event-app__field event-app__field--wide">
@@ -356,7 +356,7 @@ function RegistrationFlow({
 
         {step === 2 ? (
           <>
-            <h2>Review the demo</h2>
+            <h2 ref={headingRef} tabIndex={-1}>Review the demo</h2>
             <p>Confirming advances to a local confirmation screen. No registration service is connected.</p>
             <dl className="event-app__review-list">
               <dt>Event</dt><dd>{event.title}</dd>
@@ -667,15 +667,12 @@ export function EventRegistrationApp() {
           <>
             <section className="event-app__hero" aria-labelledby="event-discovery-title">
               <div>
-                <p className="event-app__eyebrow">// Gather · Learn · Make progress</p>
+                <p className="event-app__eyebrow">{theme.programLabel}</p>
                 <h1 className="event-app__hero-title" id="event-discovery-title" ref={titleRef} tabIndex={-1}>
-                  Find the room <em>for your next idea.</em>
+                  {theme.heroTitle} <em>{theme.heroAccent}</em>
                 </h1>
-                <p className="event-app__hero-copy">
-                  A flexible event experience for {theme.brandName}. Explore the schedule, compare formats, and open an agenda before starting a demo registration.
-                </p>
+                <p className="event-app__hero-copy">{theme.heroCopy}</p>
               </div>
-              <span className="event-app__hero-index" aria-hidden="true">03<br />/ 27</span>
             </section>
 
             <section aria-labelledby="event-list-title">

@@ -16,7 +16,7 @@ Use Node.js 20.19 or newer and pnpm 10.14 or newer.
 
 EventRegistrationApp owns the selected brand, active event, filters, form values, validation, and registration step. BrandSwitcher, EventCard, EventDetailView, EventResults, RegistrationProgress, and RegistrationFlow divide the interface into focused pieces.
 
-The typed theme records in src/data/event-themes.ts hold each brand's colors, typography, radius, and control border. src/data/event-registration-demo.ts maps those brands to fictional event, agenda, and pass data. Selecting a brand updates its CSS custom properties and its event data. Search, category, and date results are derived from the current brand's events.
+The typed theme records in src/data/event-themes.ts hold each brand's language, hero copy, colors, typography, radius, and control border. src/data/event-registration-demo.ts maps those brands to fictional event, agenda, and pass data. Selecting a brand updates its CSS custom properties and its event data. Search, category, and date results are derived from the current brand's events.
 
 Validation is kept in src/components/registration-validation.ts. Attendee data exists only in React memory for the current page session. The final step shows a local confirmation; the app does not send a request, save details, reserve a seat, or process payment.
 

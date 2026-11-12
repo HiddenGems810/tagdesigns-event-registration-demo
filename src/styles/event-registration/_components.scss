@@ -722,7 +722,7 @@
 }
 
 .event-app[data-theme="common-ground"] .event-app__hero {
-  grid-template-columns: minmax(0, 1fr) 8rem;
+  grid-template-columns: minmax(0, 1fr);
   text-align: center;
 }
 
@@ -730,11 +730,18 @@
   margin-inline: auto;
 }
 
-.event-app[data-theme="common-ground"] .event-app__hero-index {
-  color: var(--event-accent);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 2.3rem;
-  letter-spacing: -0.1em;
+.event-app[data-theme="signal-forum"] .event-app__hero {
+  border-top: 4px solid var(--event-accent);
+}
+
+.event-app[data-theme="field-assembly"] .event-app__hero-title em {
+  font-style: italic;
+}
+
+.event-app[data-theme="common-ground"] .event-app__hero-title em {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
 }
 
 .event-app[data-theme="common-ground"] .event-app__event-grid {
